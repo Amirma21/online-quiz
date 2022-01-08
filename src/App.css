@@ -8,13 +8,14 @@
 }
 
 .box-question {
-  background-color: #0F172A;
+  background-color: var(--primary-color-dark);
   width: 80%;
   height: 35%;
   border-radius: 2rem;
   direction: rtl;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .answer-section {
@@ -31,29 +32,28 @@
   padding: 0.2rem 0.4rem;
   display: flex;
   justify-content: start;
-  background-color: #0F172A;
+  background-color: var(--primary-color-dark);
   cursor: pointer;
   border-radius: 1rem;
   border: none;
   width: 80%;
-  border: 4px solid #0c4a6e;
+  border: 2px solid var(--secondery-color );
   margin: 0.4rem 0;
-  color: #fff;
+  color: var(--A-white);
 }
 
 .answer-button:hover {
-  background-color: #0e7490;
+  background-color:  var(--secondery-color );
 }
 
 .detail {
   padding: 0 0.5rem;
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  color: #f0fdfa;
+  color: var(--A-white);
 }
 
 .question-section {
-  color: #fff;
   padding: 0.5rem;
   width: 50%;
   display: flex;
@@ -61,20 +61,53 @@
 }
 
 .question-number {
-  background-color: #fff;
-  color: #0c4a6e;
+  background-color: var(--A-white);
+  color: var(--secondery-color);
   padding: 0 5px;
   border-radius: 40px;
 }
 
 .question {
   font-size: 15px;
-  color: #fef9c3;
+  color: var(--main-yellow);
 }
 
 .score{
-  color: #fff;
+  color: var(--A-white);
   position: absolute;
   top: 50%;
   left: 50%;
 }
+
+.correct-answer-box{
+  width: 30px;
+  height: 20px;
+  border: 1px solid rgb(145, 143, 143);
+  background-color: green;
+}
+
+.nextQuestionBtn{
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  color: var(--A-white);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nextQuestionBtn:hover{
+  color:#4ade80;
+}
+
+
+
+.textOfNextQuestion{
+  position: absolute;
+  top: 68%;
+  right: 4%;
+  padding: 0px 5px;
+  border-radius: 20px;
+  font-size: 12px;
+background-color: var(--A-white);
+}
+

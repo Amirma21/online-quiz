@@ -1,17 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import styled from "styled-components";
 import "./App.css";
 import { question } from "./Question";
+import {
+  BsFillArrowRightSquareFill,
+  BsFillEmojiDizzyFill,
+  BsArrowClockwise
+} from "react-icons/bs";
 
 function App() {
-  const [showCurrnetAnswer, setShowCurrentAnswer] = useState(false);
+  //states
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [nextQuestionHover, setnextQuestionHover] = useState(false);
+
+  // answerBtnHandler
   const ansewerBtnHandler = (isCorrect) => {
     const nextQuestion = currentQuestion + 1;
     {
       isCorrect && setScore(score + 1);
     }
+    {
+      nextQuestion < question.length
+        ? setCurrentQuestion(nextQuestion)
+        : setShowScore(true);
+    }
+
+    console.log(question[0].questionOption[1].answerText);
+  };
+
+  //nextQuestionBtnHandler
+
+  const nextQuestionHandler = () => {
+    const nextQuestion = currentQuestion + 1;
+
     {
       nextQuestion < question.length
         ? setCurrentQuestion(nextQuestion)
@@ -23,9 +46,16 @@ function App() {
     <div className="app">
       <div className="box-question">
         {showScore ? (
-          <div className="score">
-            امتیاز شما {score} از {question.length}
-          </div>
+          <>
+            <div className="score">
+              امتیاز شما {score} از {question.length}
+              {score >= 4 && <BsFillEmojiDizzyFill /> }
+              <div>
+                <BsArrowClockwise /> 
+                <BsArrowClockwise />
+              </div>
+            </div>
+          </>
         ) : (
           <>
             <div className="question-section">
@@ -48,7 +78,6 @@ function App() {
                         ansewerBtnHandler(questionOption.isCorrect)
                       }
                       className="answer-button"
-                      // {questionOption.isCorrect &&  style={{borderColor: "green"}}
                     >
                       {questionOption.answerText}
                     </button>
@@ -56,6 +85,17 @@ function App() {
                 }
               )}
             </div>
+
+            <BsFillArrowRightSquareFill ///next question button
+              className="nextQuestionBtn"
+              onClick={nextQuestionHandler}
+              onMouseEnter={() => setnextQuestionHover(true)}
+              onMouseLeave={() => setnextQuestionHover(false)}
+            />
+
+            {nextQuestionHover ? (
+              <div className="textOfNextQuestion"> سوال بعد </div>
+            ) : null}
           </>
         )}
       </div>
