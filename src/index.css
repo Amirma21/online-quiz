@@ -3,28 +3,37 @@
   src: local("vazir"), url(./fonts/isans.woff2);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --background-color:#3eadcf ;
-  --second-background-color :#abe9cd ;
-  --primary-color-dark : #0F172A ;
-  --secondery-color:#0e7490 ;
-  --A-white : #fff; 
-  --main-yellow : #faf3a0 ;
+  --dark-mode: #000;
 }
 
+
 body {
-  font-family:vazir;
+  --background-color: #3eadcf;
+  --second-background-color: #abe9cd;
+  --primary-color-dark: #0F172A;
+  --secondery-color: #0e7490;
+  --A-white: #fff;
+  --main-yellow: #faf3a0;
+
+
+  font-family: vazir;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
   background-color: #abe9cd;
-  background-image: linear-gradient(315deg,  var(--background-color) 0% , var(--second-background-color) 74%);
-  
+  background-image: linear-gradient(315deg, var(--background-color) 0%, var(--second-background-color) 74%);
+
+}
+
+body.dark-mode {
+  --background-color: var(--dark-mode);
+  --second-background-color: var(--dark-mode);
 }
 
 code {
