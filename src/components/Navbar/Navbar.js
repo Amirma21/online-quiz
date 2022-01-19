@@ -9,8 +9,8 @@ const Navbar = ({darkModeBtnHandler , isDark}) => {
   return (
         <div className="navbar">
           <div className="bridgeButton" onClick={darkModeBtnHandler}>
-            <BsFillSunFill className="icon" />
             <BsMoonStarsFill className="icon moon" />
+            <BsFillSunFill className="icon" />
             <label
               className={`circleButton  ${isDark && "brigeButtonActive"}`}
             ></label>

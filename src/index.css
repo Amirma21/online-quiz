@@ -8,32 +8,46 @@
   padding: 0;
 }
 
+
+/* colr that must use in dark mode  */
 :root {
-  --dark-mode: #000;
+  --dark-text-color: #f5f5f5;
+  --dark-background-color-first: #130f40;
+  --dark-background-color-second: #000000;
+  --dark-box-color: #1E293B;
+  --black: #fff;
+
+
 }
 
 
 body {
   --background-color: #3eadcf;
   --second-background-color: #abe9cd;
-  --primary-color-dark: #0F172A;
+  --box-color: #EFFBFE;
   --secondery-color: #0e7490;
-  --A-white: #fff;
-  --main-yellow: #faf3a0;
+  --A-white: rgb(38, 38, 38);
+  --main-yellow: #000;
 
 
   font-family: vazir;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
-  background-color: #abe9cd;
-  background-image: linear-gradient(315deg, var(--background-color) 0%, var(--second-background-color) 74%);
+  background-image: linear-gradient(315deg, var(--background-color) 10%, var(--second-background-color) 74%);
 
 }
 
 body.dark-mode {
-  --background-color: var(--dark-mode);
-  --second-background-color: var(--dark-mode);
+  --background-color: var(--dark-background-color-first);
+
+  --second-background-color: var(--dark-background-color-second);
+
+  --main-yellow: var(--dark-text-color);
+
+  --box-color: var(--dark-box-color);
+  --A-white: var(--black);
+
 }
 
 code {

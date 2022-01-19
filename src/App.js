@@ -20,14 +20,17 @@ function App() {
   const [nextQuestionHover, setnextQuestionHover] = useState(false);
   const [isDark, setIsDark] = useState(true);
 
-
-
   const darkModeBtnHandler = () => {
+    let body = document.body;
     {
       isDark ? setIsDark(false) : setIsDark(true);
     }
-console.log(isDark);
  
+    {
+      isDark
+        ? body.classList.add("dark-mode")
+        : body.classList.remove("dark-mode");
+    }
   };
 
   // answerBtnHandler
@@ -45,8 +48,6 @@ console.log(isDark);
     console.log(question[0].questionOption[1].answerText);
   };
 
-
-
   //nextQuestionBtnHandler
 
   const nextQuestionHandler = () => {
@@ -61,7 +62,7 @@ console.log(isDark);
 
   return (
     <>
-      <Navbar darkModeBtnHandler={darkModeBtnHandler} isDark={isDark}  />
+      <Navbar darkModeBtnHandler={darkModeBtnHandler} isDark={isDark} />
       <div className="app darkMode">
         <div className="box-question">
           {showScore ? (

@@ -1,7 +1,6 @@
 
 
 .app {
-
   width: 100%;
   height: 100vh;
   display: flex;
@@ -12,7 +11,7 @@
 
 
 .box-question {
-  background-color: var(--primary-color-dark);
+  background-color: var(--box-color);
   width: 80%;
   height: 35%;
   border-radius: 2rem;
@@ -66,7 +65,7 @@
 
 .question-number {
   background-color: var(--A-white);
-  color: var(--secondery-color);
+  color:var(--box-color);
   padding: 0 5px;
   border-radius: 40px;
 }
@@ -127,7 +126,7 @@ color: var(--A-white);
   font-size: 25px;
   background-color: #fff;
   padding: 5px;
-  color: var(--primary-color-dark);
+  color: var(--box-color);
   cursor: pointer;
   margin: 20px 5px;
 }
